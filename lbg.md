@@ -73,6 +73,8 @@ fi
 echo -e "\e[31mInstalling Argocd, It may take some time.\e[0m"
 sudo curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
 sudo chmod +x /usr/local/bin/argocd
+kubectl create namespace argocd
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 if command -v argocd &>/dev/null; then
     echo -e "\e[32mArgo CD is installed.\e[0m" # Print in green color
 else
