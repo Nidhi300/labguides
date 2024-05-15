@@ -114,7 +114,7 @@ move2kube:
   transformerselector: ""
 ```
 
-* m2kcache file content
+* m2kqacache file content
 
 ```
 apiVersion: move2kube.konveyor.io/v1alpha1
