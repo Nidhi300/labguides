@@ -1,6 +1,6 @@
 * GitHub Url: 
 ```
-https://github.com/blcporgs/catalog-service-deployment/tree/main
+https://github.com/blcporgs/catalog-service-deployment/
 ```
 
 * argocd.yaml
