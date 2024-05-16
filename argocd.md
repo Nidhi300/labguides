@@ -1,7 +1,7 @@
 * GitHub:
   Create the GitHub Repo with  the yamls that were created as part of the move2kube transformation .
   which will be available under the
-  myproject/deply/ folder
+  myproject/deploy/ folder
   and also the argocd yaml available under the myproject/deploy/cicd/argocd.
   Edit the argocd.yaml file to add the below entries 
 ```
