@@ -32,6 +32,14 @@ spec:
     repoURL:  https://github.com/blcporgs/catalog-service-deployment.git
 ```
 
+* Deploy Argo cd application
+```
+ kubectl apply -f https://github.com/blcporgs/catalog-service-deployment/raw/main/argocd.yaml
+```
+Note: Change 'blob' to 'raw' in argocd.yaml file github url(https://github.com/blcporgs/catalog-service-deployment/blob/main/argocd.yaml)
+
+* Update number of replicas in catalog-service-deployment.yaml file and see if changes are reflecting in agrocd application.
+  
 * Performed the scaled down directly from the cluster, But  we have mentioned replicas as 2 in yamls, argocd deployed another pod automatically
 
 ```
