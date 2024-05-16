@@ -40,58 +40,6 @@ Note: Change 'blob' to 'raw' in argocd.yaml file github url (https://github.com/
 
 * Update number of replicas in catalog-service-deployment.yaml file and see if changes are reflecting in argocd application.
 
-* Sacle up the number of replicas from cluster
-```
-ubuntu@ubuntu:~$ kubectl scale deployment catalog-service  --replicas=4
-deployment.apps/catalog-service scaled
-
-ubuntu@ubuntu:~$ kubectl get pods
-NAME                                     READY   STATUS    RESTARTS        AGE
-adservice-587cf5987f-7brxz               2/2     Running   0               50d
-amt                                      2/2     Running   0               27d
-cartservice-7958c76db4-mmwh2             2/2     Running   0               50d
-catalog-service-966744bfc-b6lg7          2/2     Running   0               32m
-catalog-service-966744bfc-jlbvl          2/2     Running   0               23m
-checkoutservice-5c5df86f8f-zrpz7         2/2     Running   0               50d
-currencyservice-66dc4ff95c-vslgg         2/2     Running   1 (2d20h ago)   50d
-emailservice-5847c9979-ms4zm             2/2     Running   0               50d
-frontend-7cc7599865-4g78k                2/2     Running   0               50d
-loadgenerator-84cc74dcd-7r5vl            2/2     Running   28 (28h ago)    50d
-paymentservice-75c5d46bc5-6qm6f          2/2     Running   0               50d
-productcatalogservice-65dffbf4bf-9c882   2/2     Running   0               50d
-recommendationservice-7f58c78487-crqjp   2/2     Running   0               50d
-redis-cart-76b9545755-prjnq              2/2     Running   0               50d
-shippingservice-6bd977bbdc-zw45z         2/2     Running   0               50d
-```
-As number of replicas in yamls is 2 so, argocd automatically updated pods to 2.
-
-* Performed the scaled down directly from the cluster, But we have mentioned replicas as 2 in yamls, argocd deployed another pod automatically
-
-```
-
-ubuntu@ubuntu:~$ kubectl scale deployment catalog-service  --replicas=1
-
-deployment.apps/catalog-service scaled
-ubuntu@ubuntu:~$ kubectl get po
-
-NAME                                     READY   STATUS        RESTARTS        AGE
-adservice-587cf5987f-7brxz               2/2     Running       0               50d
-amt                                      2/2     Running       0               27d
-cartservice-7958c76db4-mmwh2             2/2     Running       0               50d
-catalog-service-966744bfc-b6lg7          2/2     Running       0               8m41s
-catalog-service-966744bfc-jlbvl          2/2     Running       0               5s
-catalog-service-966744bfc-r4mg5          0/2     Terminating   0               2m30s
-
-ubuntu@ubuntu:~$ kubectl get po
-
-NAME                                     READY   STATUS    RESTARTS        AGE
-adservice-587cf5987f-7brxz               2/2     Running   0               50d
-amt                                      2/2     Running   0               27d
-cartservice-7958c76db4-mmwh2             2/2     Running   0               50d
-catalog-service-966744bfc-b6lg7          2/2     Running   0               9m
-catalog-service-966744bfc-jlbvl          2/2     Running   0               24s
-
-```
 #### Alternative way to launch Argo cd application
 
 Launch  Argo cd application and configure the new Application like below .
