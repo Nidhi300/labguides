@@ -32,7 +32,7 @@ spec:
     repoURL:  https://github.com/blcporgs/catalog-service-deployment.git
 ```
 
-Launch  Argo cd application and onfigure the new Application like below .
+Launch  Argo cd application and configure the new Application like below .
 * ArgoCD Configuration for application deployment
 
 ![alt text](image.png)
