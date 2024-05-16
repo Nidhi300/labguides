@@ -38,9 +38,9 @@ spec:
 ```
 Note: Change 'blob' to 'raw' in argocd.yaml file github url (https://github.com/blcporgs/catalog-service-deployment/blob/main/argocd.yaml)
 
-* Update number of replicas in catalog-service-deployment.yaml file and see if changes are reflecting in agrocd application.
+* Update number of replicas in catalog-service-deployment.yaml file and see if changes are reflecting in argocd application.
 
-* Sacle up the number of replicas from clusted
+* Sacle up the number of replicas from cluster
 ```
 ubuntu@ubuntu:~$ kubectl scale deployment catalog-service  --replicas=4
 deployment.apps/catalog-service scaled
@@ -65,7 +65,7 @@ shippingservice-6bd977bbdc-zw45z         2/2     Running   0               50d
 ```
 As number of replicas in yamls is 2 so, argocd automatically updated pods to 2.
 
-* Performed the scaled down directly from the cluster, But  we have mentioned replicas as 2 in yamls, argocd deployed another pod automatically
+* Performed the scaled down directly from the cluster, But we have mentioned replicas as 2 in yamls, argocd deployed another pod automatically
 
 ```
 
