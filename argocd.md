@@ -1,4 +1,4 @@
-* GitHub Url:
+* GitHub:
   Create the GitHub Repo with  the yamls that were created as part of the move2kube transformation .
   which will be available under the
   myproject/deply/ folder
