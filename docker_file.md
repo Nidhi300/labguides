@@ -161,6 +161,9 @@ CMD ["nginx", "-g", "daemon off;"]
 -----------------------------
 
 ### Exercise: 
+Write a docker file to  run the java application  available at https://github.com/konveyor/move2kube-demos/tree/main/samples/language-platforms/java-war.
+Use the Liberty Container to host the application. 
+application should srart th port 8080
 
 
 
