@@ -85,6 +85,41 @@ EXPOSE 8001
 CMD ["python","manage.py","runserver","0.0.0.0:8001"]
 ```
 
+Content of 'requirements.txt' file:
+```
+asgiref==3.2.3
+Django==3.0.3
+django-cors-headers==3.2.1
+djangorestframework==3.11.0
+pytz==2019.3
+sqlparse==0.3.0
+```
+
+Content of 'manage.py' file:
+```
+#!/usr/bin/env python
+"""Django's command-line utility for administrative tasks."""
+import os
+import sys
+
+
+def main():
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'todo_drf.settings')
+    try:
+        from django.core.management import execute_from_command_line
+    except ImportError as exc:
+        raise ImportError(
+            "Couldn't import Django. Are you sure it's installed and "
+            "available on your PYTHONPATH environment variable? Did you "
+            "forget to activate a virtual environment?"
+        ) from exc
+    execute_from_command_line(sys.argv)
+
+
+if __name__ == '__main__':
+    main()
+```
+
 #### 9. ENTRYPOINT
 Similar to CMD, this instruction defines what command will be executed when running a container.
 
