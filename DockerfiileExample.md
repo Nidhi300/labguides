@@ -51,8 +51,8 @@ ENTRYPOINT ["java", "-jar","-Dspring.profiles.active=dev","catalog-service-1.0.j
 * Create the Dockerfile
 
 ```
-# Use the official MySQL 8.0 image as base
-FROM mysql:8.0
+# Use the official MySQL 5.5 image as base
+FROM mysql:5.5
  
 # Set environment variables
 
