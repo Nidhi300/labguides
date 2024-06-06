@@ -419,3 +419,37 @@ catalog-service-v1  m2kconfig.yaml  m2kqacache.yaml  myproject
 ```
 
 * Once move2kube convert the code to the k8s supporting you will get the 'myproject' directory inside the move2kubeHome folder.
+
+# Knative Support
+
+* Knative yaml file
+
+  ```
+  apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    move2kube.konveyor.io/service: catalog-service-v1
+  name: catalog-service-v1
+spec:
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+        - image: index.docker.io/korificf/catalog-service-v1:latest
+          imagePullPolicy: Always
+          name: catalog-service-v1
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              ephemeral-storage: "0"
+              memory: "0"
+      imagePullSecrets:
+        - name: index-docker-io-imagepullsecret
+      restartPolicy: Always
+      securityContext: {}
+status: {}
+```
